@@ -22,8 +22,7 @@ class SQLiteTests: XCTestCase {
 
     func testAbsolutePath() throws {
         //Creates an absolute path with a writable directory
-        let defaultManager = FileManager.default
-        let absolutePath = defaultManager.currentDirectoryPath.finished(with: "/absolute.sqlite")
+        let absolutePath = "/private/tmp/absolute.sqlite"
         XCTAssert(absolutePath.hasPrefix("/"))
         try testProviderBoot(path: absolutePath)
     }
